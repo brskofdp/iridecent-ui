@@ -7,7 +7,7 @@
 	3. Run this script in your executor
 ]]
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/Source.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/brskofdp/iridecent-ui/refs/heads/main/Source.lua"))()
 
 -- Create main window
 local Window = Library:Window({
