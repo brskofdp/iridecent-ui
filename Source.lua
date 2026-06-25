@@ -1,11 +1,7 @@
 --[[
 	Iridescent UI Library
 	Extracted and cleaned from the leaked Iridescent script
-	1052: attempt to index nil with 'UI'
-
-
-
-
+	
 	Usage:
 		local Library = loadstring(game:HttpGet("raw github link here"))()
 		local Window = Library:Window({ Name = "My Script" })
@@ -1053,7 +1049,7 @@ function Library:Window(WindowData)
 			if inp.KeyCode == Enum.KeyCode.RightShift and not UserInputService:GetFocusedTextBox() then
 				Window.Open = not Window.Open
 				Library.IsOpen = Window.Open
-				self.Components.UI.Enabled = Window.Open
+				Components["UI"].Enabled = Window.Open
 			end
 		end)
 	end
