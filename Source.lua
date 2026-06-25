@@ -1,7 +1,11 @@
 --[[
 	Iridescent UI Library
 	Extracted and cleaned from the leaked Iridescent script
-	
+	1052: attempt to index nil with 'UI'
+
+
+
+
 	Usage:
 		local Library = loadstring(game:HttpGet("raw github link here"))()
 		local Window = Library:Window({ Name = "My Script" })
