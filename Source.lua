@@ -669,13 +669,14 @@ function Library:Window(WindowData)
 	local Components = {}
 
 	do -- Components
-		Components["UI"] = Globals:Instance("ScreenGui", {
-			IgnoreGuiInset = true,
-			ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
-			Name = "UI",
-			Parent = CoreGui,
-			DisplayOrder = 3,
-		})
+	Components["UI"] = Globals:Instance("ScreenGui", {
+		IgnoreGuiInset = true,
+		ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
+		Name = "UI",
+		Parent = CoreGui,
+		DisplayOrder = 3,
+		Enabled = false,
+	})
 
 		Components["Outline"] = Globals:Instance("TextButton", {
 			Font = Enum.Font.SourceSans,
@@ -1048,7 +1049,11 @@ function Library:Window(WindowData)
 			if inp.KeyCode == Enum.KeyCode.RightShift and not UserInputService:GetFocusedTextBox() then
 				Window.Open = not Window.Open
 				Library.IsOpen = Window.Open
-				Window:SetVisibility(Window.Open)
+				if Window.Open then
+					Window:OpenWindow()
+				else
+					Window:Close()
+				end
 			end
 		end)
 	end
