@@ -655,11 +655,11 @@ function Library:Window(WindowData)
 		Sections = {},
 		Components = {},
 		PlayerImage = WindowData.PlayerImage,
-		Open = true,
-		IsOpen = true,
+		Open = false,
+		IsOpen = false,
 	}
 
-	Library.IsOpen = true
+	Library.IsOpen = false
 
 	Window.ArmorPanel = self:CreateArmorPanel()
 	Window.ModPanel = self:CreateModeratorsPanel()
@@ -688,7 +688,7 @@ function Library:Window(WindowData)
 			BackgroundColor3 = Color3.fromRGB(11, 11, 11),
 			BorderColor3 = Color3.fromRGB(0, 0, 0),
 			BorderSizePixel = 0,
-			Position = UDim2.new(0.5, 0, 3, 0),
+			Position = UDim2.new(0.5, 0, 0.5, 0),
 			Size = UDim2.new(0, 650, 0, 470),
 			Name = "Outline",
 			Parent = Components["UI"],
@@ -1049,11 +1049,7 @@ function Library:Window(WindowData)
 			if inp.KeyCode == Enum.KeyCode.RightShift and not UserInputService:GetFocusedTextBox() then
 				Window.Open = not Window.Open
 				Library.IsOpen = Window.Open
-				if Window.Open then
-					Window:OpenWindow()
-				else
-					Window:Close()
-				end
+				self.Components.UI.Enabled = Window.Open
 			end
 		end)
 	end
