@@ -3611,7 +3611,7 @@ LPH_NO_VIRTUALIZE(function() --// Not that important
                               function Section:Button(ButtonData)
                                     local Button = {
                                           Name = ButtonData.Name,
-                                          Flag = ButtonData.Flag,
+                                          Flag = ButtonData.Flag or ButtonData.Name or ("Button_" .. tostring(math.random(1, 100000))),
                                           Class = "Button",
                                           Callback = ButtonData.Callback or function() end
                                     }
