@@ -1,9 +1,8 @@
 --// Universal ESP Example using Iridescent UI Library
 --// Adapted to be 100% Universal (No game-specific features, supports R6 & R15)
 
-local Library = loadstring(readfile("source.lua"))()
--- For GitHub deployment:
--- local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/source.lua"))()
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/brskofdp/iridecent-ui/refs/heads/main/Source.lua"))()
 
 --// Services
 local Workspace = game:GetService("Workspace")
