@@ -1,4 +1,16 @@
 local function Log(...) end
+
+local Math = {
+	RoundToIncrement = function(value, increment)
+		return math.floor(value / increment + 0.5) * increment
+	end,
+	FloorVector = function(vector)
+		return Vector2.new(math.floor(vector.X), math.floor(vector.Y))
+	end,
+	Clamp = function(val, min, max)
+		return math.clamp(val, min, max)
+	end
+}
 --[[
       Leaked by mainstreamed and ender :)
       Have fun skids
